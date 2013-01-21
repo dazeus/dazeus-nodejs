@@ -32,7 +32,39 @@ the DaZeus documentation to see what events are available. The event interface u
 Node.js's events.EventEmitter. Take a look at their documentation to see how listening to events
 works in Node.js
 
-Callback arguments depend on the parameters returned by DaZeus.
+Callback arguments depend on the parameters returned by DaZeus. Events you can listen for are:
+
+- `CONNECT`
+- `DISCONNECT`
+- `JOIN`
+- `PART`
+- `QUIT`
+- `NICK`
+- `MODE`
+- `TOPIC`
+- `INVITE`
+- `KICK`
+- `PRIVMSG`
+- `NOTICE`
+- `CTCP`
+- `CTCP_REP`
+- `ACTION`
+- `UNKNOWN`
+- `WHOIS`
+- `NAMES`
+- `PRIVMSG_ME`
+- `CTCP_ME`
+- `ACTION_ME`
+
+Some examples to get you going:
+
+    client.on('PRIVMSG', function (network, user, channel, message) {
+        // every event has a different set of parameters
+    });
+
+    client.on('WHOIS', function (network, server, user) {
+        // you don't need to specify all parameters if you don't need them
+    });
 
 ### Methods
 All these methods provide callbacks that are executed when the information requested is provided
