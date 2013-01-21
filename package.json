@@ -1,0 +1,23 @@
+{
+  "name": "dazeus-nodejs",
+  "version": "0.0.0",
+  "description": "Node.js Bindings for DaZeus",
+  "main": "lib/dazeus.js",
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rnijveld/dazeus-nodejs.git"
+  },
+  "keywords": [
+    "dazeus",
+    "irc"
+  ],
+  "author": "Ruben Nijveld <ruben@gewooniets.nl>",
+  "license": "BSD",
+  "devDependencies": {
+    "mocha": "",
+    "should": ""
+  }
+}
