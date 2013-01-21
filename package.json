@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rnijveld/dazeus-nodejs.git"
+    "url": "git://github.com:rnijveld/dazeus-nodejs.git"
   },
   "keywords": [
     "dazeus",
