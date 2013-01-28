@@ -4,7 +4,7 @@ This package provides bindings for the DaZeus IRC Bot
 ## Getting started
 Here's an example echobot, that just repeats every message back to the channel
 
-    var dazeus = require("./lib/dazeus");
+    var dazeus = require("dazeus");
     var client = dazeus.connect({path: '/tmp/dazeus.sock'}, function () {
         client.on('PRIVMSG', function (network, user, channel, message) {
             client.message(network, channel, message);
@@ -14,7 +14,7 @@ Here's an example echobot, that just repeats every message back to the channel
 ## Quick Reference
 We start by setting up a new instance of the client:
 
-    var dazeus = require("./lib/dazeus");
+    var dazeus = require("dazeus");
     var client = dazeus.connect({path: '/tmp/dazeus.sock'}, function () {
 
     });
@@ -125,5 +125,14 @@ Retrieve the nickname of the bot.
 
 Send a '/whois' request for a specific nick on a network.
 
+    DaZeus.onCommand(command[, network], callback)
 
+Receive a notification when a command is executed, for example to catch `}help` you would write:
+`DaZeus.onCommand('help', function () { /* ... */ });`
+
+    DaZeus.reply(network, channel, user, message[, highlight][, callback])
+
+Reply to a message sent by a user in a channel. By default the bot will also add a highlight for
+the user if the channel is public. This function will also automatically resolve replies in private
+conversations.
 
