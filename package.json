@@ -1,6 +1,6 @@
 {
   "name": "dazeus",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Node.js Bindings for DaZeus",
   "main": "./lib/dazeus.js",
   "scripts": {
@@ -18,7 +18,9 @@
   "license": "BSD",
   "devDependencies": {
     "mocha": "",
-    "should": "",
+    "should": ""
+  },
+  "dependencies": {
     "optimist": "",
     "prettydate": "",
     "js-methods": ""
