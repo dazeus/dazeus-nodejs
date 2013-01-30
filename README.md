@@ -136,3 +136,27 @@ Reply to a message sent by a user in a channel. By default the bot will also add
 the user if the channel is public. This function will also automatically resolve replies in private
 conversations.
 
+
+## Helper functions
+Some helper functions are provided, please take a look at the source for detailed documentation of these:
+
+    dazeus.optionsFromArgv(argv)
+
+    dazeus.optimist()
+
+    dazeus.readFile(file)
+
+    dazeus.writeFile(file, data)
+
+    dazeus.existsIn(file, str)
+
+    dazeus.randomFrom(file)
+
+    dazeus.removeFrom(file, str)
+
+    dazeus.appendTo(file, str)
+
+    dazeus.firstArgument(args)
+
+    dazeus.isCommand(command, args, yes[, no])
+
