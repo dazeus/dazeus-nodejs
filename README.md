@@ -144,6 +144,8 @@ Some helper functions are provided, please take a look at the source for detaile
 
     dazeus.optimist()
 
+    dazeus.help(argv)
+
     dazeus.readFile(file)
 
     dazeus.writeFile(file, data)

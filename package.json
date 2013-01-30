@@ -1,6 +1,6 @@
 {
   "name": "dazeus",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Node.js Bindings for DaZeus",
   "main": "./lib/dazeus.js",
   "scripts": {
