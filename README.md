@@ -106,6 +106,16 @@ Join a channel.
 Leave a channel.
 
 
+    DaZeus.names(network, channel, callback)
+
+Request the list of names in a channel (mode characters are prepended).
+
+
+    DaZeus.nicknames(network, channel, callback)
+
+Request the list of nicknames (with any prefixes removed) in a channel.
+
+
     DaZeus.networks(callback)
 
 Retrieve the list of networks the bot is connected to.
