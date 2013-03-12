@@ -1,6 +1,6 @@
 {
   "name": "dazeus",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Node.js Bindings for DaZeus",
   "main": "./lib/dazeus.js",
   "scripts": {
@@ -23,6 +23,6 @@
   "dependencies": {
     "optimist": "",
     "prettydate": "",
-    "js-methods": ""
+    "underscore": ""
   }
 }
