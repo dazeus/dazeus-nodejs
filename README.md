@@ -86,6 +86,20 @@ Store a property in the DaZeus database.
 Remove a property from the DaZeus database.
 
 
+    DaZeus.getPermission(permission, scope[, default], callback)
+
+Get a permission (with the given default as a default).
+
+
+    DaZeus.setPermission(permission, scope, allow[, callback])
+
+Set a permission to the given allow or denied value (true for allow, false for deny).
+
+
+    DaZeus.unsetPermission(permission, scope[, callback])
+
+Remove a permission.
+
     DaZeus.message(network, channel, message[, callback])
 
 Send a message to a specific channel on a specific network.
@@ -94,6 +108,21 @@ Send a message to a specific channel on a specific network.
     DaZeus.action(network, channel, message[, callback])
 
 Send a '/me' message to a specific channel on a specific network.
+
+
+    DaZeus.notice(network, channel, message[, callback])
+
+Send a notice to a specific channel on a specific network.
+
+
+    DaZeus.ctcp(network, channel, message[, callback])
+
+Send a CTCP request to a specific channel on a specific network.
+
+
+    DaZeus.ctcpReply(network, channel, message[, callback])
+
+Send a CTCP reply to a specific channel on a specific network.
 
 
     DaZeus.join(network, channel[, callback])
