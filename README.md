@@ -105,6 +105,7 @@ Set a permission to the given allow or denied value (true for allow, false for d
 
 Remove a permission.
 
+
     DaZeus.message(network, channel, message[, callback])
 
 Send a message to a specific channel on a specific network.
