@@ -86,6 +86,11 @@ Store a property in the DaZeus database.
 Remove a property from the DaZeus database.
 
 
+    DaZeus.propertyKeys(property[, scope], callback)
+
+Retrieve all keys starting with the given name.
+
+
     DaZeus.getPermission(permission, scope[, default], callback)
 
 Get a permission (with the given default as a default).
@@ -174,30 +179,3 @@ Receive a notification when a command is executed, for example to catch `}help` 
 Reply to a message sent by a user in a channel. By default the bot will also add a highlight for
 the user if the channel is public. This function will also automatically resolve replies in private
 conversations.
-
-
-## Helper functions
-Some helper functions are provided, please take a look at the source for detailed documentation of these:
-
-    dazeus.optionsFromArgv(argv)
-
-    dazeus.optimist()
-
-    dazeus.help(argv)
-
-    dazeus.readFile(file)
-
-    dazeus.writeFile(file, data)
-
-    dazeus.existsIn(file, str)
-
-    dazeus.randomFrom(file)
-
-    dazeus.removeFrom(file, str)
-
-    dazeus.appendTo(file, str)
-
-    dazeus.firstArgument(args)
-
-    dazeus.isCommand(command, args, yes[, no])
-

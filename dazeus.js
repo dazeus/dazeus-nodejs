@@ -188,6 +188,28 @@ DaZeus.prototype.unsetProperty = function (property, scope, callback) {
 };
 
 /**
+ * Retrieve the keys starting with a given string from the database of properties in DaZeus
+ * @param {String}   property Starting string of the properties
+ * @param {Array}    scope    Scope identifier (optional)
+ * @param {Function} callback Function to be executed with the results from the request
+ */
+DaZeus.prototype.propertyKeys = function (property, scope, callback) {
+    if (typeof scope === 'function') {
+        callback = scope;
+        scope = undefined;
+        this.debug("Retrieving properties starting with %s without scope", property);
+    } else {
+        this.debug("Retrieving properties starting with %s with scope %s", property, JSON.stringify(scope));
+    }
+
+    if (typeof scope === 'undefined') {
+        sendReceive.call(this, {'do': 'property', params: ['keys', property]}, callback);
+    } else {
+        sendReceive.call(this, {'do': 'property', scope: scope, params: ['keys', property]}, callback);
+    }
+};
+
+/**
  * Get a permission
  * @param  {String}   permission Name of the permission
  * @param  {Array}    scope      Scope identifer
