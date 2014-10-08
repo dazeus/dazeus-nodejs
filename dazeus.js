@@ -31,6 +31,9 @@ var DaZeus = function (options, onConnect) {
     this.debug_enabled = options.debug;
     this.handshook = false;
 
+    // received data which could not be parsed into messages yet
+    this.data = '';
+
     // determine correct call of net.connect
     var cb = function () {
         connected.call(self);
@@ -47,7 +50,7 @@ var DaZeus = function (options, onConnect) {
 
     // when data is received
     this.client.on('data', function (data) {
-        var obj = dezeusify.call(this, data);
+        var obj = dezeusify.call(self, data.toString('utf8'));
         obj.forEach(function (item) {
             received.call(self, item);
         });
@@ -694,21 +697,29 @@ var dazeusify = function (message) {
  * @return {Array} Array of parsed messages
  */
 var dezeusify = function (message) {
-    var objs = [], collector = '', chr, msglen;
+    var objs = [], collector = '', chr, msglen, data;
 
-    for (var i = 0; i < message.length; i += 1) {
-        chr = message[i];
+    this.data += message;
+    data = new Buffer(this.data, 'utf8');
+
+    for (var i = 0; i < data.length; i += 1) {
+        chr = data[i];
         if (chr > 47 && chr < 58) {
             collector += String.fromCharCode(chr);
         } else if (chr !== 10 && chr !== 13) {
             msglen = parseInt(collector, 10);
-            collector = '';
 
-            objs.push(JSON.parse(message.toString('utf8', i, i + msglen)));
-
-            i += msglen;
+            if (msglen + i <= data.length) {
+              objs.push(JSON.parse(data.toString('utf8', i, msglen + i)));
+              data = data.slice(i + msglen);
+              collector = '';
+              i = 0;
+            } else {
+              break;
+            }
         }
     }
+    this.data = data.toString('utf8');
     return objs;
 };
 
