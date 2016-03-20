@@ -1,6 +1,5 @@
 var net = require('net');
 var EventEmitter = require('events').EventEmitter;
-var sys = require('sys');
 var strftime = require('prettydate').strftime;
 var util = require('util');
 
@@ -77,7 +76,7 @@ var DaZeus = function (options, onConnect) {
     this.subscribedEvents = [];
     this.waitingCallbacks = [];
 };
-sys.inherits(DaZeus, EventEmitter);
+util.inherits(DaZeus, EventEmitter);
 
 /**
  * Handshake with the server.
