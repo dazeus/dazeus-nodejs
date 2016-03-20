@@ -15,8 +15,5 @@
   "license": "MIT",
   "dependencies": {
     "prettydate": ""
-  },
-  "devDependencies": {
-    "nodemon": "^1.9.1"
   }
 }
